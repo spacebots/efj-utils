@@ -1,4 +1,4 @@
-// $Id: createDatabaseTester.cpp,v 1.3 2011/07/22 14:44:50 david Exp $
+// $Id: createDatabaseTester.cpp,v 1.4 2012/02/16 17:23:45 david Exp $
 //
 // Copyright (C) 2008-2011 INESC ID Lisboa.
 //
@@ -17,6 +17,9 @@
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 //
 // $Log: createDatabaseTester.cpp,v $
+// Revision 1.4  2012/02/16 17:23:45  david
+// Included CSU-compatible training.
+//
 // Revision 1.3  2011/07/22 14:44:50  david
 // Minor cleanup.
 //
@@ -33,7 +36,7 @@
 #include <QDebug>
 
 #include <Eigen/Core>
-#include "Database.h"
+#include <efj/Database.h>
 
 /**
  *
