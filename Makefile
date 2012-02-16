@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.4 2012/02/16 17:23:45 david Exp $
+# $Id: Makefile,v 1.5 2012/02/16 23:03:11 ferreira Exp $
 #
 # Copyright (C) 2008-2011 INESC ID Lisboa.
 #
@@ -17,6 +17,9 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 #
 # $Log: Makefile,v $
+# Revision 1.5  2012/02/16 23:03:11  ferreira
+# added support for eigen in x's
+#
 # Revision 1.4  2012/02/16 17:23:45  david
 # Included CSU-compatible training.
 #
@@ -37,6 +40,8 @@ LIBDIR=/usr/lib64
 QTDIR=$(LIBDIR)/qt4
 INCLUDEDIR=/usr/include
 EIGEN=$(INCLUDEDIR)/eigen3
+#path for using in x's
+EIGEN=../../eigen
 
 CLASSES = 
 PROGRAMS = eig3Train eig3Rec eig3RecOne eig3RecOnePickOne createDatabaseTester trainAndWriteCSUCompatible
