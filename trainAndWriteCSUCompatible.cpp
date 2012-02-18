@@ -15,6 +15,9 @@
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 //
 // $Log: trainAndWriteCSUCompatible.cpp,v $
+// Revision 1.3  2012/02/18 16:01:15  ferreira
+// *** empty log message ***
+//
 // Revision 1.2  2012/02/16 23:54:27  ferreira
 // added use of a compute_eigenfaces that does not filter eigenvalues and eigenvectors
 //
@@ -46,6 +49,6 @@ int main(int argc, char *argv[]) {
 
   efj::Database db(dir, nSubjects);
   db.compute_eigenfaces_NO_FILTERING();
-  db.project_clusters();
+  //db.project_clusters();
   db.writeSubspace(database);
 }
