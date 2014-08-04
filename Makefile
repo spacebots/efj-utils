@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.5 2012/02/16 23:03:11 ferreira Exp $
+# $Id: Makefile,v 1.6 2014/08/04 10:10:34 rzl Exp $
 #
 # Copyright (C) 2008-2011 INESC ID Lisboa.
 #
@@ -17,6 +17,9 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 #
 # $Log: Makefile,v $
+# Revision 1.6  2014/08/04 10:10:34  rzl
+# Changed paths to Eigen3 includes from local to /usr/include
+#
 # Revision 1.5  2012/02/16 23:03:11  ferreira
 # added support for eigen in x's
 #
@@ -35,20 +38,19 @@ CC = g++
 #32bit
 #LIBDIR=/usr/lib
 #64bit
-LIBDIR=/usr/lib64
+LIBDIR     = /usr/lib64
 
-QTDIR=$(LIBDIR)/qt4
-INCLUDEDIR=/usr/include
-EIGEN=$(INCLUDEDIR)/eigen3
+QTDIR      = $(LIBDIR)/qt4
+INCLUDEDIR = /usr/include
+EIGEN      = $(INCLUDEDIR)/eigen3
 #path for using in x's
-EIGEN=../../eigen
 
 CLASSES = 
 PROGRAMS = eig3Train eig3Rec eig3RecOne eig3RecOnePickOne createDatabaseTester trainAndWriteCSUCompatible
 
 SRCFILES = $(CLASSES:%=%.cpp) $(PROGRAMS:%=%.cpp)
 OCLASSES = $(CLASSES:%=%.o)
-OFILES = $(PROGRAMS:%=%.o) $(OCLASSES)
+OFILES   = $(PROGRAMS:%=%.o) $(OCLASSES)
 
 LIBEFJ_LIB = $(LIBDIR)
 LIBEFJ_INC = $(INCLUDEDIR)
@@ -65,7 +67,7 @@ BASE_CXXINC = -I. -I$(LIBEFJDIR) -I$(EIGEN) -I$(QTDIR)/include/QtCore/ -I$(QTDIR
 #BASE_CXXDEBUG =-DDEBUG -ggdb  -D_FORTIFY_SOURCE=2 -funwind-tables -fasynchronous-unwind-tables -D_REENTRANT
 #optimize 
 BASE_CXXDEBUG = -DNDEBUG -DEIGEN_NO_DEBUG -O3 -msse2 -msse3 -mssse3 -msse4 -msse4.1 -msse4.2 -fmessage-length=0 -D_FORTIFY_SOURCE=2 -fstack-protector -funwind-tables -fasynchronous-unwind-tables -D_REENTRANT -fopenmp
-BASE_CXXOTHER = -Wall -DPIC -fPIC -pipe
+BASE_CXXOTHER = -Wall -DPIC -fPIC -pipe -std=c++11
 
 # 32bit
 #CXXFLAGS += -m32 $(BASE_CXXINC) $(BASE_CXXDEBUG) $(BASE_CXXOTHER)
